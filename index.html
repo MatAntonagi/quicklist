@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicklist</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+        <header><img src="./assets/img/logo.svg" alt="Logo Quicklist"></header>
+
+        <main>
+            <div class="top">
+                <a href="#">
+                    <i class="hgi hgi-stroke hgi-arrow-left-02"></i>
+                    Voltar
+                </a>
+
+                <h1>Compras da semana</h1>
+            </div>
+
+            <form>
+                <div class="add-item">
+                    <input type="text" placeholder="Adicione um novo item">
+                    <button class="btn">Adicionar item</button>
+                </div>
+
+                <div class="list-wrapper">
+                    
+                    <div class="item-list">
+                        <input type="checkbox" name="bread" id="bread">
+                        
+                        <div>
+                            <label for="bread">Pão de forma</label>
+                            <img src="./assets/icons/recycle-bin.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item-list">
+                        <input type="checkbox" name="coffee" id="coffee">
+                        <div>
+                            <label for="coffee">Café preto</label>
+                            <img src="./assets/icons/recycle-bin.svg" alt="">
+                        </div>
+                        
+                    </div>
+
+                    <div class="item-list">
+                        <input type="checkbox" name="orange juice" id="orange juice">
+                        <div>
+                            <label for="orange juice">Suco de laranja</label>
+                            <img src="./assets/icons/recycle-bin.svg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="item-list">
+                        <input type="checkbox" name="cookie" id="cookie">
+                        <div>
+                            <label for="cookie">Bolacha</label>
+                            <img src="./assets/icons/recycle-bin.svg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+            <div id="alert">
+                <div class="alert-content">
+                    <img src="./assets/icons/warning-circle-filled.svg" alt="">
+                    <div>
+                        <span>O item foi removido da lista</span>
+                        <img src="./assets/icons/delete-small.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+
+    <script src="./script.js"></script>
+</body>
+</html>

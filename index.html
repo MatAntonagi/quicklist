@@ -25,64 +25,32 @@
                 <h1>Compras da semana</h1>
             </div>
 
-            <form>
+            <form id="item-form">
                 <div class="add-item">
-                    <input type="text" placeholder="Adicione um novo item">
-                    <button class="btn">Adicionar item</button>
-                </div>
-
-                <div class="list-wrapper">
-                    
-                    <div class="item-list">
-                        <input type="checkbox" name="bread" id="bread">
-                        
-                        <div>
-                            <label for="bread">Pão de forma</label>
-                            <img src="./assets/icons/recycle-bin.svg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="item-list">
-                        <input type="checkbox" name="coffee" id="coffee">
-                        <div>
-                            <label for="coffee">Café preto</label>
-                            <img src="./assets/icons/recycle-bin.svg" alt="">
-                        </div>
-                        
-                    </div>
-
-                    <div class="item-list">
-                        <input type="checkbox" name="orange juice" id="orange juice">
-                        <div>
-                            <label for="orange juice">Suco de laranja</label>
-                            <img src="./assets/icons/recycle-bin.svg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="item-list">
-                        <input type="checkbox" name="cookie" id="cookie">
-                        <div>
-                            <label for="cookie">Bolacha</label>
-                            <img src="./assets/icons/recycle-bin.svg" alt="">
-                        </div>
-                    </div>
-
+                    <input type="text" name="newItem" id="newItem" placeholder="Adicione um novo item" required>
+                    <button type="submit" class="btn">Adicionar item</button>
                 </div>
             </form>
 
-            <div id="alert">
+            <div class="list-wrapper">
+                <div id="item-list-container">
+                    <!-- Lista de itens vai aparecer aqui -->
+                </div>
+            </div>
+
+            <div id="alert" style="display: none;">
                 <div class="alert-content">
                     <img src="./assets/icons/warning-circle-filled.svg" alt="">
                     <div>
                         <span>O item foi removido da lista</span>
-                        <img src="./assets/icons/delete-small.svg" alt="">
+                        <img src="./assets/icons/delete-small.svg" alt="" id="close-alert">
                     </div>
                 </div>
             </div>
 
         </main>
         
-
     <script src="./script.js"></script>
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     list-style: none;
     padding: 0;
@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 
-:root{
+:root {
     --ff: "Inter", sans-serif;
 
     --title: 700 1.5rem/2rem var(--ff);
@@ -30,115 +30,76 @@
     --border-hover: #B9C2D0;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
     background-color: var(--background-primary);
     justify-items: center;
+    align-items: center;
+    font-family: var(--ff);
 }
 
-header{
+header {
     width: 100%;
     text-align: center;
     padding: 3rem 0 1rem;
 }
 
-main{
+main {
     width: 100%;
     padding: 0 2rem;
-
     padding-bottom: 3rem;
+}
 
-    & .top{
-        display: grid;
-        gap: 1rem;
+main .top {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
 
-        & a{
-            color: var(--color-brand);
-            font: var(--link);
-        }
-
-        & h1{
-            font: var(--title);
-        }
+    & a {
+        color: var(--color-brand);
+        font: var(--link);
     }
 
-    & form{
-        width: 100%;
-
-        & .add-item{
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2.75rem;
-
-            & input{
-                width: 100%;
-                height: 3rem;
-                background-color: var(--background-secondary);
-                border-radius: .75rem;
-                padding: .5rem;
-                outline: solid 2px var(--content-tertiary);
-                border: none;
-                color: var(--content-tertiary);
-                font: var(--paragraph);
-            }
-
-            & input:focus{
-                outline: 2px solid var(--color-brand);
-                border: none;
-                color:  var(--content-primary);
-            }
-        }
-
-        & .list-wrapper{
-            margin-top: 2.5rem;
-            display: grid;
-            gap: .75rem;
-        }
-    }
-
-    & #alert{
-        display: none;
-        
-
-        & .alert-content{
-            margin-top: 2.25rem;
-            padding: .75rem;
-            width: 100%;
-            height: 3rem;
-            background-color: var(--color-danger);
-            border-radius: .75rem;
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-
-            & div{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                color: var(--always-white);
-                font: var(--label);
-            }
-        }
+    & h1 {
+        font: var(--title);
+        color: var(--content-primary);
     }
 }
 
-.btn{
+form {
+    width: 100%;
+}
+
+form .add-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.75rem;
+}
+
+
+
+form .add-item button {
     height: 2.75rem;
     background-color: var(--color-brand);
     border: none;
     border-radius: .75rem;
     color: var(--always-white);
     font: var(--label);
-
-    &:hover{
+    
+    &:hover {
         background-color: var(--color-brand-hover);
     }
 }
 
-.item-list{
+
+.list-wrapper {
+    margin-top: 2.5rem;
+    display: grid;
+}
+
+.item-list {
     width: 100%;
     height: 3rem;
     background-color: var(--background-secondary);
@@ -147,43 +108,100 @@ main{
     align-items: center;
     padding: .75rem .5rem;
     border-radius: .75rem;
-
     font: var(--paragraph);
     color: var(--content-secondary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-    & input{
-        appearance: none;
+.item-list + .item-list{
+    margin-top: .75rem;
+}
 
-        width: 1rem;
-        height: 1rem;
-        border: 2px solid var(--border-primary);
-        border-radius: .3rem;
-        background-color: var(--always-white);
-        display: inline-block;
-    }
+.item-list div{
+        margin-left: auto;
+        cursor: pointer;
+}
 
-    & input:checked{
-        border: 2px solid var(--color-brand);
-        background-color: var(--color-brand);
-        background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7.5L4.75 9.25L10 3.75' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
-    }
+.quantity-container{
+    max-width: min-content;
+}
 
-    
-    
-    & div{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+#alert {
+    display: none;
+}
 
-        & img{
-            cursor: pointer;
-        }
+#alert .alert-content {
+    margin-top: 2.25rem;
+    padding: .75rem;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color-danger);
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+#alert .alert-content div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--always-white);
+    font: var(--label);
+
+    & img{
+        cursor: pointer;
     }
 }
 
-@media (width >= 1280px){
-    main{
+input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--background-secondary);
+    border-radius: .75rem;
+    padding: .5rem;
+    outline: solid 2px var(--content-tertiary);
+    border: none;
+    color: var(--content-tertiary);
+    font: var(--paragraph);
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--color-brand);
+    border: none;
+    color: var(--content-primary);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--border-primary);
+    border-radius: .3rem;
+    background-color: var(--always-white);
+    display: inline-block;
+}
+
+input[type="checkbox"]:checked {
+    border: 2px solid var(--color-brand);
+    background-color: var(--color-brand);
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7.5L4.75 9.25L10 3.75' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E ");
+}
+
+input[type="number"]{
+    width: 3rem;
+    height: 1.5rem;
+    border: 2px solid var(--border-primary);
+    border-radius: .3rem;
+    background-color: var(--always-white);
+    color: #080B12;
+
+    padding: .375rem;
+}
+
+@media (min-width: 1280px) {
+    main {
         width: 627px;
     }
 }
